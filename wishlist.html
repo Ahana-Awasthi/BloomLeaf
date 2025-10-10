@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - The Green Heaven</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/wishlist.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">The Green <span>Heaven</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="wishlist.html" class="icon-btn">
+                    <span class="wishlist-icon">❤️</span>
+                    <span class="badge" id="wishlist-badge">0</span>
+                </a>
+                <a href="cart.html" class="icon-btn">
+                    <span class="cart-icon">🛒</span>
+                    <span class="badge" id="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 class="page-title">Your Wishlist</h1>
+        <p class="page-subtitle">Plants you've saved for later</p>
+
+        <!-- Wishlist Items Container (populated by JS) -->
+        <div class="wishlist-items" id="wishlist-items-container">
+            <!-- Items will be rendered dynamically here -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-wishlist">
+            <div class="empty-icon">💚</div>
+            <h2>Your wishlist is empty</h2>
+            <p>Start adding plants you love!</p>
+            <button class="browse-plants-btn" onclick="window.location.href='shop.html'">Browse Plants</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+               <h3> <img src="images/bloomleaf.png" alt=""> BloomLeaf</h3>
+                <p>Bringing nature's beauty to your home</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: info@bloomleaf.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BloomLeaf. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - The Green Heaven</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff0000;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #000000;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff0000;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #000000;
+            transition: color 0.3s;
+        }
+
+        .icon-btn:hover {
+            color: #ff0000;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 1rem 0;
+            background: #f8f8f8;
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: #ff0000;
+        }
+
+        /* Product Details */
+        .product-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding: 2rem 0;
+        }
+
+        .product-images {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #ff0000;
+        }
+
+        .thumbnail-gallery {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            transition: border-color 0.3s;
+        }
+
+        .thumbnail:hover,
+        .thumbnail.active {
+            border-color: #ff0000;
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            color: #000000;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        .product-description {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .product-features {
+            list-style: none;
+        }
+
+        .product-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-features li:before {
+            content: "✓";
+            color: #ff0000;
+            margin-right: 0.5rem;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .quantity-input {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn-primary {
+            flex: 2;
+            padding: 1rem 2rem;
+            background: #ff0000;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #cc0000;
+        }
+
+        .btn-secondary {
+            flex: 1;
+            padding: 1rem 2rem;
+            background: #ffffff;
+            color: #ff0000;
+            border: 2px solid #ff0000;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #ff0000;
+            color: #ffffff;
+        }
+
+        /* Related Products */
+        .related-products {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        .product-info-small {
+            padding: 1rem;
+        }
+
+        .product-title-small {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #000000;
+        }
+
+        .product-price-small {
+            font-size: 1.2rem;
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            color: #ffffff;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #ff0000;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #ff0000;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .product-details {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .main-image {
+                height: 300px;
+            }
+
+            .product-title {
+                font-size: 2rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-title {
+                font-size: 1.5rem;
+            }
+
+            .product-price {
+                font-size: 1.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .thumbnail-gallery {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="index.html" class="logo">The Green Heaven</a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <button class="icon-btn" onclick="window.location.href='wishlist.html'">❤️</button>
+                    <button class="icon-btn" onclick="window.location.href='cart.html'">🛒</button>
+                    <button class="icon-btn">👤</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &gt; <a href="shop.html">Shop</a> &gt; <span>Product Details</span>
+        </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="container">
+        <div class="product-details">
+            <div class="product-images">
+                <img src="https://placeholder-image-service.onrender.com/image/600x400?prompt=lush%20monstera%20deliciosa%20plant%20with%20large%20green%20leaves%20in%20a%20modern%20pot&id=monstera-main"
+                    alt="Lush Monstera Deliciosa plant with large green leaves in a modern pot" class="main-image"
+                    id="mainImage">
+                <div class="thumbnail-gallery">
+                    <img src="https://placeholder-image-service.onrender.com/image/150x100?prompt=monstera%20deliciosa%20close-up%20of%20leaf%20details&id=monstera-thumb1"
+                        alt="Monstera Deliciosa close-up of leaf details" class="thumbnail active"
+                        onclick="changeImage(this.src)">
+                    <img src="https://placeholder-image-service.onrender.com/image/150x100?prompt=monstera%20deliciosa%20plant%20from%20different%20angle&id=monstera-thumb2"
+                        alt="Monstera Deliciosa plant from different angle" class="thumbnail"
+                        onclick="changeImage(this.src)">
+                    <img src="https://placeholder-image-service.onrender.com/image/150x100?prompt=monstera%20deliciosa%20in%20home%20decor%20setting&id=monstera-thumb3"
+                        alt="Monstera Deliciosa in home decor setting" class="thumbnail"
+                        onclick="changeImage(this.src)">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1 class="product-title">Monstera Deliciosa</h1>
+                <p class="product-price">$45.99</p>
+
+                <p class="product-description">
+                    The Monstera Deliciosa, also known as the Swiss Cheese Plant, is a stunning tropical plant
+                    known for its large, glossy leaves with unique natural holes. This easy-to-care-for plant
+                    adds a touch of jungle elegance to any space and is perfect for both beginners and
+                    experienced plant enthusiasts.
+                </p>
+
+                <ul class="product-features">
+                    <li>Mature size: 6-8 feet tall indoors</li>
+                    <li>Light requirements: Bright, indirect light</li>
+                    <li>Watering: Every 1-2 weeks</li>
+                    <li>Pet friendly: No (toxic to pets)</li>
+                    <li>Air purifying: Yes</li>
+                    <li>Difficulty level: Easy</li>
+                </ul>
+
+                <div class="quantity-selector">
+                    <label for="quantity">Quantity:</label>
+                    <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                    <input type="number" id="quantity" class="quantity-input" value="1" min="1" max="10">
+                    <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-primary" onclick="addToCart()">Add to Cart</button>
+                    <button class="btn-secondary" onclick="addToWishlist()">Add to Wishlist</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="container">
+        <div class="related-products">
+            <h2 class="section-title">You Might Also Like</h2>
+            <div class="products-grid">
+                <!-- Related Product 1 -->
+                <div class="product-card" onclick="window.location.href='product-details.html?id=2'">
+                    <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=beautiful%20rose%20bush%20with%20red%20blossoms%20in%20a%20garden&id=rose-related"
+                        alt="Beautiful rose bush with red blossoms in a garden" class="product-image">
+                    <div class="product-info-small">
+                        <h3 class="product-title-small">Red Rose Bush</h3>
+                        <p class="product-price-small">$29.99</p>
+                    </div>
+                </div>
+
+                <!-- Related Product 2 -->
+                <div class="product-card" onclick="window.location.href='product-details.html?id=3'">
+                    <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=collection%20of%20succulent%20plants%20in%20various%20shapes%20and%20colors&id=succulent-related"
+                        alt="Collection of succulent plants in various shapes and colors" class="product-image">
+                    <div class="product-info-small">
+                        <h3 class="product-title-small">Succulent Collection</h3>
+                        <p class="product-price-small">$24.99</p>
+                    </div>
+                </div>
+
+                <!-- Related Product 3 -->
+                <div class="product-card" onclick="window.location.href='product-details.html?id=4'">
+                    <img src="https://placeholder-image-service.onrender.com/image/400x300?prompt=large%20outdoor%20ornamental%20plant%20with%20green%20foliage&id=outdoor-related"
+                        alt="Large outdoor ornamental plant with green foliage" class="product-image">
+                    <div class="product-info-small">
+                        <h3 class="product-title-small">Outdoor Ornamental</h3>
+                        <p class="product-price-small">$39.99</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>The Green Heaven</h3>
+                    <p>Your trusted partner for beautiful plants and gardening supplies since 2010.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>123 Garden Street<br>Greentown, GT 12345<br>Phone: (555) 123-4567<br>Email: info@greenheaven.com
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 The Green Heaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product image gallery functionality
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+            document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Quantity selector functionality
+        function increaseQuantity() {
+            const input = document.getElementById('quantity');
+            if (parseInt(input.value) < 10) {
+                input.value = parseInt(input.value) + 1;
+            }
+        }
+
+        function decreaseQuantity() {
+            const input = document.getElementById('quantity');
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+            }
+        }
+
+        // Add to cart functionality
+        function addToCart() {
+            const quantity = document.getElementById('quantity').value;
+            alert(`Added ${quantity} Monstera Deliciosa plant(s) to cart!`);
+            // In real implementation, this would update cart data
+        }
+
+        // Add to wishlist functionality
+        function addToWishlist() {
+            alert('Added Monstera Deliciosa to wishlist!');
+            // In real implementation, this would update wishlist data
+        }
+
+        // Get product ID from URL (for future integration with products.json)
+        function getProductId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id');
+        }
+
+        // Initialize product details based on ID
+        document.addEventListener('DOMContentLoaded', function () {
+            const productId = getProductId();
+            console.log('Loading product with ID:', productId);
+            // In real implementation, this would fetch product data from products.json
+        });
+    </script>
+</body>
+
+</html>

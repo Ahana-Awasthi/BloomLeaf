@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Login</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        /* Login container */
+        .login-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Logo/Title */
+        .logo {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        /* Form styles */
+        .form-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input[type="email"],
+        input[type="password"],
+        input[type="text"],
+        input[type="tel"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        /* Remember me and submit */
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .remember-me input[type="checkbox"] {
+            margin-right: 0.5rem;
+            width: auto;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #5a67d8;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Links */
+        .register-link {
+            margin-top: 1rem;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .register-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Modal for registration (hidden by default) */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close {
+            float: right;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        /* Error message */
+        .error {
+            color: #e53e3e;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .success {
+            color: #38a169;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .login-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="logo">E-Shop Login</div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <div class="remember-me">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember me</label>
+            </div>
+            <button type="submit" id="loginBtn">Login</button>
+            <div id="errorMsg" class="error"></div>
+            <div id="successMsg" class="success"></div>
+            <a href="#" class="register-link" onclick="openModal(event)">Don't have an account? Register</a>
+        </form>
+    </div>
+
+    <!-- Registration Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Quick Register (Demo)</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="regAge">Age</label>
+                    <input type="number" id="regAge" min="18" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPhone">Phone Number</label>
+                    <input type="tel" id="regPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="regAddress">Address (for shipping)</label>
+                    <textarea id="regAddress" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" required minlength="6">
+                </div>
+                <button type="submit">Register</button>
+                <div id="regErrorMsg" class="error"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Initialize default user if none exists (with expanded profile)
+        function initUsers() {
+            if (!localStorage.getItem('users')) {
+                const defaultUsers = [{
+                    name: 'John Doe',
+                    email: 'user@example.com',
+                    age: 30,
+                    phone: '+1-234-567-8900',
+                    address: '123 Main St, Anytown, USA 12345',
+                    password: 'password123'
+                }];
+                localStorage.setItem('users', JSON.stringify(defaultUsers));
+            }
+        }
+
+        // Get users from localStorage
+        function getUsers() {
+            return JSON.parse(localStorage.getItem('users') || '[]');
+        }
+
+        // Save users to localStorage
+        function saveUsers(users) {
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+
+        // Validate email
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // Validate phone (basic)
+        function isValidPhone(phone) {
+            return /^\+?[\d\s-]{10,}$/.test(phone);
+        }
+
+        // Show/hide error message
+        function showMessage(elementId, message, isError = true) {
+            const msg = document.getElementById(elementId);
+            msg.textContent = message;
+            msg.style.display = 'block';
+            if (!isError) {
+                msg.className = 'success';
+            } else {
+                msg.className = 'error';
+            }
+            setTimeout(() => { msg.style.display = 'none'; }, 3000);
+        }
+
+        // Open registration modal
+        function openModal(event) {
+            event.preventDefault();
+            document.getElementById('registerModal').style.display = 'flex';
+        }
+
+        // Close registration modal
+        function closeModal() {
+            document.getElementById('registerModal').style.display = 'none';
+            document.getElementById('registerForm').reset();
+            document.getElementById('regErrorMsg').style.display = 'none';
+        }
+
+        // Check if already logged in
+        function checkLoggedIn() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn === 'true') {
+                window.location.href = 'dashboard.html';
+            }
+        }
+
+        // Login handler
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const remember = document.getElementById('remember').checked;
+
+            if (!isValidEmail(email)) {
+                showMessage('errorMsg', 'Please enter a valid email.');
+                return;
+            }
+            if (password.length < 6) {
+                showMessage('errorMsg', 'Password must be at least 6 characters.');
+                return;
+            }
+
+            const users = getUsers();
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (user) {
+                // Store full user object for dashboard
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('currentUser ', JSON.stringify(user));
+                showMessage('errorMsg', 'Login successful! Redirecting...', false);
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 1000);
+            } else {
+                showMessage('errorMsg', 'Invalid email or password.');
+            }
+        });
+
+        // Register handler (expanded)
+        document.getElementById('registerForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('regName').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
+            const age = parseInt(document.getElementById('regAge').value);
+            const phone = document.getElementById('regPhone').value.trim();
+            const address = document.getElementById('regAddress').value.trim();
+            const password = document.getElementById('regPassword').value.trim();
+
+            if (!name || name.length < 2) {
+                showMessage('regErrorMsg', 'Please enter a valid full name.');
+                return;
+            }
+            if (!isValidEmail(email)) {
+                showMessage('regErrorMsg', 'Please enter a valid email.');
+                return;
+            }
+            if (age < 18) {
+                showMessage('regErrorMsg', 'Age must be at least 18.');
+                return;
+            }
+            if (!isValidPhone(phone)) {
+                showMessage('regErrorMsg', 'Please enter a valid phone number.');
+                return;
+            }
+            if (!address || address.length < 10) {
+                showMessage('regErrorMsg', 'Please enter a valid address.');
+                return;
+            }
+            if (password.length < 6) {
+                showMessage('regErrorMsg', 'Password must be at least 6 characters.');
+                return;
+            }
+
+            const users = getUsers();
+            if (users.find(u => u.email === email)) {
+                showMessage('regErrorMsg', 'Email already registered.');
+                return;
+            }
+
+            const newUser = { name, email, age, phone, address, password };
+            users.push(newUser);
+            saveUsers(users);
+            showMessage('regErrorMsg', 'Registration successful! You can now log in.', false);
+            closeModal();
+            document.getElementById('loginForm').reset();
+        });
+
+        // Initialize on load
+        initUsers();
+        checkLoggedIn();
+
+        // Close modal on outside click
+        window.onclick = function (event) {
+            const modal = document.getElementById('registerModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+
+</html>

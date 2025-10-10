@@ -1,0 +1,121 @@
+/* Wishlist Items */
+.wishlist-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.wishlist-item {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.wishlist-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.wishlist-item .item-image {
+    flex: 0 0 auto;
+    margin-right: 0;
+    margin-bottom: 1rem;
+}
+
+.wishlist-item .item-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.wishlist-item .item-details {
+    flex: 1;
+}
+
+.wishlist-item .item-rating {
+    color: #ffc107;
+    margin-bottom: 1rem;
+}
+
+.item-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.add-to-cart-btn {
+    background: #d32f2f;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    flex: 1;
+    transition: background 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background: #b71c1c;
+}
+
+.remove-wishlist-btn {
+    background: #666;
+    color: white;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.remove-wishlist-btn:hover {
+    background: #444;
+}
+
+/* Empty State */
+.empty-wishlist {
+    text-align: center;
+    padding: 3rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 2px dashed #ddd;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.empty-wishlist h2 {
+    color: #2e7d32;
+    margin-bottom: 1rem;
+}
+
+.empty-wishlist p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.browse-plants-btn {
+    background: #d32f2f;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.browse-plants-btn:hover {
+    background: #b71c1c;
+}
+.footer-section img{
+  height: 40px;
+}

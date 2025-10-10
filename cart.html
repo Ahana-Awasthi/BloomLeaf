@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - The Green Heaven</title>
+    <link rel="stylesheet" href="styles/cart.css">
+<link rel="stylesheet" href="styles/style.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">The Green <span>Heaven</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <a href="cart.html" class="icon-btn">
+                    <span class="cart-icon">🛒</span>
+                    <span class="badge" id="cart-badge">3</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 class="page-title">Your Shopping Cart</h1>
+
+        <!-- Cart Items -->
+        <div class="cart-items">
+            <!-- Item 1 -->
+            <div class="cart-item">
+                <div class="item-image">
+                    <img src="https://placeholder-image-service.onrender.com/image/120x120?text=Monstera+Plant&bg=4CAF50&color=white"
+                        alt="Monstera Deliciosa plant with large green leaves">
+                </div>
+                <div class="item-details">
+                    <h3>Monstera Deliciosa</h3>
+                    <p>Large indoor plant with unique split leaves</p>
+                    <div class="item-price">$34.99</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-btn" onclick="updateQuantity('monstera', -1)">-</button>
+                    <span class="quantity" id="quantity-monstera">1</span>
+                    <button class="quantity-btn" onclick="updateQuantity('monstera', 1)">+</button>
+                </div>
+                <div class="item-total">$34.99</div>
+                <button class="remove-btn" onclick="removeItem('monstera')">Remove</button>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="cart-item">
+                <div class="item-image">
+                    <img src="https://placeholder-image-service.onrender.com/image/120x120?text=Snake+Plant&bg=8BC34A&color=white"
+                        alt="Snake Plant with tall vertical green leaves">
+                </div>
+                <div class="item-details">
+                    <h3>Snake Plant</h3>
+                    <p>Hardy low-maintenance air purifying plant</p>
+                    <div class="item-price">$24.99</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-btn" onclick="updateQuantity('snake', -1)">-</button>
+                    <span class="quantity" id="quantity-snake">2</span>
+                    <button class="quantity-btn" onclick="updateQuantity('snake', 1)">+</button>
+                </div>
+                <div class="item-total">$49.98</div>
+                <button class="remove-btn" onclick="removeItem('snake')">Remove</button>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="cart-item">
+                <div class="item-image">
+                    <img src="https://placeholder-image-service.onrender.com/image/120x120?text=Orchid+Plant&bg=E91E63&color=white"
+                        alt="Beautiful purple orchid flower in full bloom">
+                </div>
+                <div class="item-details">
+                    <h3>Purple Orchid</h3>
+                    <p>Elegant flowering plant for home decoration</p>
+                    <div class="item-price">$29.99</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-btn" onclick="updateQuantity('orchid', -1)">-</button>
+                    <span class="quantity" id="quantity-orchid">1</span>
+                    <button class="quantity-btn" onclick="updateQuantity('orchid', 1)">+</button>
+                </div>
+                <div class="item-total">$29.99</div>
+                <button class="remove-btn" onclick="removeItem('orchid')">Remove</button>
+            </div>
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-line">
+                <span>Subtotal</span>
+                <span id="subtotal">$114.96</span>
+            </div>
+            <div class="summary-line">
+                <span>Shipping</span>
+                <span>$9.99</span>
+            </div>
+            <div class="summary-line total">
+                <span>Total</span>
+                <span id="total">$124.95</span>
+            </div>
+            <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+            <button class="continue-shopping" onclick="window.location.href='shop.html'">Continue Shopping</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+             <h3><img src="images/bloomleaf.png" alt=""> BloomLeaf</h3>
+                <p>Bringing nature's beauty to your home</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: info@bloomleaf.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BloomLeaf. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>

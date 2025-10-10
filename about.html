@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - GreenThumb Nursery</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #000;
+            /* Black text */
+            background-color: #fff;
+            /* White background */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: #000;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Header */
+        .header {
+            background: #2e7d32;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            padding-left: 150px;
+            /* Red */
+        }
+
+        .logo img {
+            height: 50px;
+            padding-top: 20px;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            font-size: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/about.png') center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 70px;
+            /* Account for fixed header */
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+
+        .cta-btn {
+            background: #2e7d32;
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 5px;
+        }
+
+        .cta-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgb(0, 0, 0);
+        }
+
+        /* Story Section */
+        .story {
+            padding: 5rem 0;
+            background: #fff;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .story-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .story-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Mission Section */
+        .mission {
+            padding: 5rem 0;
+            background: #f9f9f9;
+            /* Light gray for contrast */
+        }
+
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: #2e7d32;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 5rem 0;
+            background: #fff;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member img {
+            width: 95%;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .learn-more {
+            background: #2e7d32;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .learn-more:hover {
+            background: #036008;
+        }
+
+        /* Why Us Section */
+        .why-us {
+            padding: 5rem 0;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .why-list {
+            list-style: none;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .why-list li {
+            background: #fff;
+            margin: 1rem 0;
+            padding: 1rem;
+            border-left: 5px solid #2e7d32;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        /* check here */
+        .why-list li:hover {
+            background: #28932d;
+            color: #fff;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2e7d32;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background: #fff;
+            margin: 15% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+
+        .close {
+            color: #000;
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #FF0000;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                /* Hide on mobile; add JS for toggle if needed */
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .mission-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                height: 60vh;
+                margin-top: 60px;
+            }
+
+            .container {
+                padding: 0 10px;
+            }
+        }
+
+        /* Fade-in Animation on Scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo"> <a href="index.html"><img src="images/bloomleaf.png" alt=""> BloomLeaf</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">☰</div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About BloomLeaf</h1>
+            <p>Bringing nature to your doorstep since 2010. We specialize in premium plants and eco-friendly gardening
+                solutions.</p>
+            <button class="cta-btn">Explore Our Story</button>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="story" id="story">
+        <div class="container">
+            <h2>Our Story</h2>
+            <div class="story-grid">
+                <div class="story-text">
+                    <p>Founded in 2010 by passionate horticulturists, BloomLeaf Nursery started as a small backyard
+                        operation. Today, we're a leading online destination for plant lovers, offering over 1,000
+                        varieties of indoor and outdoor plants, seeds, and tools.</p>
+                    <p>Our commitment to sustainability drives everything we do—from sourcing organic soil to using
+                        recyclable packaging.</p>
+                </div>
+                <div class="story-image">
+                    <img src="images/nursery-garden.png" alt="Our Nursery Garden" width="600" height="400">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <h2>Our Mission & Vision</h2>
+            <div class="mission-cards">
+                <div class="card">
+                    <h3>Mission</h3>
+                    <p>To make gardening accessible and enjoyable for everyone, promoting healthier homes and
+                        environments through quality plants.</p>
+                </div>
+                <div class="card">
+                    <h3>Vision</h3>
+                    <p>A world where every home has a touch of green, fostering sustainability and well-being.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member" data-modal="modal1">
+                    <img src="images/team1.png" alt="Ahana Awasthi" width="300" height="300">
+                    <h3>Ahana Awasthi</h3>
+                    <p>Founder & CEO</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+                <div class="team-member" data-modal="modal2">
+                    <img src="images/team2.png" alt="Bob Smith" width="300" height="300">
+                    <h3>Bob Smith</h3>
+                    <p>Head Horticulturist</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+                <div class="team-member" data-modal="modal3">
+                    <img src="images/team3.png" alt="Carol Lee" width="300" height="300">
+                    <h3>Carol Lee</h3>
+                    <p>Customer Experience Lead</p>
+                    <button class="learn-more">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <h2>Why Choose BloomLeaf?</h2>
+            <ul class="why-list">
+                <li>100% Satisfaction Guarantee</li>
+                <li>Free Shipping on Orders Over $50</li>
+                <li>Expert Gardening Advice</li>
+                <li>Sustainable & Organic Products</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 BloomLeaf Nursery. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a
+                    href="#terms">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <!-- Modals for Team Bios (Hidden by Default) -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Ahana Awasthi</h3>
+            <p>With 20 years in horticulture, Ahana founded BloomLeaf to share her love for plants. She oversees our
+                sustainable sourcing and innovation.</p>
+        </div>
+    </div>
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Bob Smith</h3>
+            <p>Bob is our plant whisperer, ensuring every seedling thrives. He holds a degree in Botany and loves rare
+                succulents.</p>
+        </div>
+    </div>
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Carol Lee</h3>
+            <p>Carol makes your shopping experience seamless. With a passion for happy customers, she brings the gentle
+                care of BloomLeaf to every query.</p>
+        </div>
+    </div>
+
+    <script>// Mobile Menu Toggle (Basic - expands nav on hamburger click)
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // CTA Button Smooth Scroll to Story Section
+        document.querySelector('.cta-btn').addEventListener('click', () => {
+            document.getElementById('story').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Team Modals Functionality
+        const modals = document.querySelectorAll('.team-member');
+        const modalElements = document.querySelectorAll('.modal');
+        const closes = document.querySelectorAll('.close');
+
+        modals.forEach(member => {
+            member.addEventListener('click', () => {
+                const modalId = member.dataset.modal;
+                document.getElementById(modalId).style.display = 'block';
+            });
+        });
+
+        closes.forEach(close => {
+            close.addEventListener('click', () => {
+                close.closest('.modal').style.display = 'none';
+            });
+        });
+
+        // Close modal on outside click (backdrop)
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                e.target.style.display = 'none';
+            }
+        });
+
+        // Fade-in Animation on Scroll (using Intersection Observer)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for fade-in effect
+        document.querySelectorAll('.story, .mission, .team, .why-us').forEach(el => {
+            el.classList.add('fade-in');
+            observer.observe(el);
+        });
+
+        // Navigation Links Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu after click (if open)
+                    const navLinks = document.querySelector('.nav-links');
+                    if (window.innerWidth <= 768 && navLinks.style.display === 'flex') {
+                        navLinks.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        // Additional Interactivity: Hero Image Parallax Effect (Optional Enhancement)
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });</script>
+</body>
+
+</html>

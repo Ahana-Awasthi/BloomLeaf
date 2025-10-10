@@ -1,0 +1,543 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Monstera Deliciosa",
+            "category": "indoor",
+            "currentPrice": 24.99,
+            "originalPrice": 29.99,
+            "discount": 17,
+            "description": "Large tropical plant with unique split leaves. Perfect for bright indoor spaces.",
+            "image": "./images/monstera-deliciosa.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Snake Plant",
+            "category": "indoor",
+            "currentPrice": 18.99,
+            "originalPrice": 22.99,
+            "discount": 17,
+            "description": "Low-maintenance plant with upright sword-like leaves. Purifies indoor air.",
+            "image": "./images/snake-plant.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Peace Lily",
+            "category": "indoor",
+            "currentPrice": 21.99,
+            "originalPrice": 26.99,
+            "discount": 19,
+            "description": "Elegant white flowers with glossy green leaves. Thrives in low light.",
+            "image": "./images/peace-lily.jpg"
+        },
+        {
+            "id": 4,
+            "name": "ZZ Plant",
+            "category": "indoor",
+            "currentPrice": 27.99,
+            "originalPrice": 32.99,
+            "discount": 15,
+            "description": "Extremely durable plant with waxy green leaves. Nearly indestructible.",
+            "image": "./images/zz-plant.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Pothos Golden",
+            "category": "indoor",
+            "currentPrice": 15.99,
+            "originalPrice": 19.99,
+            "discount": 20,
+            "description": "Trailing vine with heart-shaped leaves. Perfect for hanging baskets.",
+            "image": "./images/pothos-golden.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Fiddle Leaf Fig",
+            "category": "indoor",
+            "currentPrice": 49.99,
+            "originalPrice": 59.99,
+            "discount": 17,
+            "description": "Statement plant with large violin-shaped leaves. Loves bright light.",
+            "image": "./images/fiddle-leaf-fig.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Spider Plant",
+            "category": "indoor",
+            "currentPrice": 12.99,
+            "originalPrice": 15.99,
+            "discount": 19,
+            "description": "Easy-care plant with arching leaves and baby plantlets. Great for beginners.",
+            "image": "./images/spider-plant.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Rubber Plant",
+            "category": "indoor",
+            "currentPrice": 34.99,
+            "originalPrice": 39.99,
+            "discount": 13,
+            "description": "Bold plant with large, glossy leaves. Adds dramatic texture to any room.",
+            "image": "./images/rubber-plant.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Chinese Money Plant",
+            "category": "indoor",
+            "currentPrice": 22.99,
+            "originalPrice": 27.99,
+            "discount": 18,
+            "description": "Unique plant with round, coin-shaped leaves. Brings good fortune.",
+            "image": "./images/chinese-money-plant.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Bird of Paradise",
+            "category": "indoor",
+            "currentPrice": 59.99,
+            "originalPrice": 69.99,
+            "discount": 14,
+            "description": "Tropical beauty with large banana-like leaves. Makes a dramatic statement.",
+            "image": "./images/bird-of-paradise.jpg"
+        },
+        {
+            "id": 11,
+            "name": "Rose Bush",
+            "category": "outdoor",
+            "currentPrice": 19.99,
+            "originalPrice": 24.99,
+            "discount": 20,
+            "description": "Beautiful flowering rose bush with vibrant red blooms. Perfect for gardens.",
+            "image": "./images/rose-bush.jpg"
+        },
+        {
+            "id": 12,
+            "name": "Lavender Plant",
+            "category": "outdoor",
+            "currentPrice": 16.99,
+            "originalPrice": 19.99,
+            "discount": 15,
+            "description": "Fragrant purple flowers with silvery-green foliage. Attracts pollinators.",
+            "image": "./images/lavender-plant.jpg"
+        },
+        {
+            "id": 13,
+            "name": "Tomato Plant",
+            "category": "outdoor",
+            "currentPrice": 14.99,
+            "originalPrice": 17.99,
+            "discount": 17,
+            "description": "Heirloom tomato plant that produces juicy, flavorful fruits all season.",
+            "image": "./images/tomato-plant.jpg"
+        },
+        {
+            "id": 14,
+            "name": "Hydrangea Bush",
+            "category": "outdoor",
+            "currentPrice": 29.99,
+            "originalPrice": 34.99,
+            "discount": 14,
+            "description": "Large flowering shrub with stunning blue or pink blooms. Loves partial shade.",
+            "image": "./images/hydrangea-bush.jpg"
+        },
+        {
+            "id": 15,
+            "name": "Lemon Tree",
+            "category": "outdoor",
+            "currentPrice": 49.99,
+            "originalPrice": 59.99,
+            "discount": 17,
+            "description": "Dwarf lemon tree that produces fragrant blossoms and juicy lemons.",
+            "image": "./images/lemon-tree.jpg"
+        },
+        {
+            "id": 16,
+            "name": "Boxwood Hedge",
+            "category": "outdoor",
+            "currentPrice": 22.99,
+            "originalPrice": 27.99,
+            "discount": 18,
+            "description": "Evergreen shrub perfect for formal hedges and topiary. Low maintenance.",
+            "image": "./images/boxwood-hedge.jpg"
+        },
+        {
+            "id": 17,
+            "name": "Geranium Plant",
+            "category": "outdoor",
+            "currentPrice": 12.99,
+            "originalPrice": 15.99,
+            "discount": 19,
+            "description": "Colorful flowering plant that blooms all summer. Drought tolerant.",
+            "image": "./images/geranium-plant.jpg"
+        },
+        {
+            "id": 18,
+            "name": "Japanese Maple",
+            "category": "outdoor",
+            "currentPrice": 39.99,
+            "originalPrice": 49.99,
+            "discount": 20,
+            "description": "Ornamental tree with delicate, colorful foliage. Perfect for small gardens.",
+            "image": "./images/japanese-maple.jpg"
+        },
+        {
+            "id": 19,
+            "name": "Peony Bush",
+            "category": "outdoor",
+            "currentPrice": 34.99,
+            "originalPrice": 42.99,
+            "discount": 19,
+            "description": "Lush flowering bush with enormous, fragrant blooms in spring.",
+            "image": "./images/peony-bush.jpg"
+        },
+        {
+            "id": 20,
+            "name": "Sunflower Pack",
+            "category": "outdoor",
+            "currentPrice": 9.99,
+            "originalPrice": 12.99,
+            "discount": 23,
+            "description": "Pack of sunflower seeds that grow into giant, cheerful flowers.",
+            "image": "./images/sunflower-pack.jpg"
+        },
+        {
+            "id": 21,
+            "name": "Echeveria Succulent",
+            "category": "succulents",
+            "currentPrice": 8.99,
+            "originalPrice": 11.99,
+            "discount": 25,
+            "description": "Rosette-forming succulent with beautiful pastel colors. Low water needs.",
+            "image": "./images/echeveria-succulent.jpg"
+        },
+        {
+            "id": 22,
+            "name": "Aloe Vera Plant",
+            "category": "succulents",
+            "currentPrice": 12.99,
+            "originalPrice": 15.99,
+            "description": "Medicinal plant with soothing gel in its leaves. Easy to grow indoors.",
+            "image": "./images/aloe-vera-plant.jpg"
+        },
+        {
+            "id": 23,
+            "name": "Haworthia Venosa",
+            "category": "succulents",
+            "currentPrice": 10.99,
+            "originalPrice": 13.99,
+            "discount": 21,
+            "description": "A compact succulent with thick, patterned leaves that thrive in bright light.",
+            "image": "./images/haworthia-zebra.jpg"
+        },
+        {
+            "id": 24,
+            "name": "Jade Plant",
+            "category": "succulents",
+            "currentPrice": 14.99,
+            "originalPrice": 18.99,
+            "discount": 21,
+            "description": "Symbol of good luck with thick, glossy leaves. Very long-lived.",
+            "image": "./images/jade-plant.jpg"
+        },
+        {
+            "id": 25,
+            "name": "String of Pearls",
+            "category": "succulents",
+            "currentPrice": 16.99,
+            "originalPrice": 21.99,
+            "discount": 23,
+            "description": "Unique trailing succulent with bead-like leaves. Perfect for hanging planters.",
+            "image": "./images/string-of-pearls.jpg"
+        },
+        {
+            "id": 26,
+            "name": "Burro's Tail",
+            "category": "succulents",
+            "currentPrice": 17.99,
+            "originalPrice": 22.99,
+            "discount": 22,
+            "description": "Trailing succulent with plump, blue-green leaves. Drought tolerant.",
+            "image": "./images/burros-tail.jpg"
+        },
+        {
+            "id": 27,
+            "name": "Panda Plant",
+            "category": "succulents",
+            "currentPrice": 11.99,
+            "originalPrice": 14.99,
+            "discount": 20,
+            "description": "Fuzzy succulent with soft, velvety leaves. Adorable and easy to care for.",
+            "image": "./images/panda-plant.jpg"
+        },
+        {
+            "id": 28,
+            "name": "Zebra Cactus",
+            "category": "succulents",
+            "currentPrice": 13.99,
+            "originalPrice": 16.99,
+            "discount": 18,
+            "description": "Striking succulent with horizontal white stripes. Low maintenance beauty.",
+            "image": "./images/zebra-cactus.jpg"
+        },
+        {
+            "id": 29,
+            "name": "Moon Cactus",
+            "category": "succulents",
+            "currentPrice": 9.99,
+            "originalPrice": 12.99,
+            "discount": 23,
+            "description": "Colorful grafted cactus with bright red, orange, or yellow tops.",
+            "image": "./images/moon-cactus.jpg"
+        },
+        {
+            "id": 30,
+            "name": "Sedum Cluster",
+            "category": "succulents",
+            "currentPrice": 15.99,
+            "originalPrice": 19.99,
+            "discount": 20,
+            "description": "Ground-cover succulent that spreads beautifully. Great for rock gardens.",
+            "image": "./images/sedum-cluster.jpg"
+        },
+        {
+            "id": 31,
+            "name": "Orchid Phalaenopsis",
+            "category": "flowering",
+            "currentPrice": 29.99,
+            "originalPrice": 39.99,
+            "discount": 25,
+            "description": "Elegant orchid with long-lasting blooms. Perfect gift plant.",
+            "image": "./images/orchid-phalaenopsis.jpg"
+        },
+        {
+            "id": 32,
+            "name": "African Violet",
+            "category": "flowering",
+            "currentPrice": 13.99,
+            "originalPrice": 17.99,
+            "discount": 22,
+            "description": "Compact flowering plant with velvety leaves and purple blooms.",
+            "image": "./images/african-violet.jpg"
+        },
+        {
+            "id": 33,
+            "name": "Begonia Rex",
+            "category": "flowering",
+            "currentPrice": 18.99,
+            "originalPrice": 23.99,
+            "discount": 21,
+            "description": "Colorful foliage plant with stunning leaf patterns. Gorgeous indoor display.",
+            "image": "./images/begonia-rex.jpg"
+        },
+        {
+            "id": 34,
+            "name": "Cyclamen Plant",
+            "category": "flowering",
+            "currentPrice": 16.99,
+            "originalPrice": 21.99,
+            "discount": 23,
+            "description": "Charming plant with heart-shaped leaves and upswept flowers.",
+            "image": "./images/cyclamen-plant.jpg"
+        },
+        {
+            "id": 35,
+            "name": "Kalanchoe Blossfeld",
+            "category": "flowering",
+            "currentPrice": 14.99,
+            "originalPrice": 18.99,
+            "discount": 21,
+            "description": "Cheerful succulent with clusters of bright flowers. Blooms for months.",
+            "image": "./images/kalanchoe-blossfeld.jpg"
+        },
+        {
+            "id": 36,
+            "name": "Gerbera Daisy",
+            "category": "flowering",
+            "currentPrice": 17.99,
+            "originalPrice": 22.99,
+            "discount": 22,
+            "description": "Bright, cheerful daisies in various colors. Perfect for pots and gardens.",
+            "image": "./images/gerbera-daisy.jpg"
+        },
+        {
+            "id": 37,
+            "name": "Fuchsia Plant",
+            "category": "flowering",
+            "currentPrice": 19.99,
+            "originalPrice": 24.99,
+            "discount": 20,
+            "description": "Elegant hanging plant with teardrop flowers. Loves shade and moisture.",
+            "image": "./images/fuchsia-plant.jpg"
+        },
+        {
+            "id": 38,
+            "name": "Impatiens Bundle",
+            "category": "flowering",
+            "currentPrice": 12.99,
+            "originalPrice": 16.99,
+            "discount": 24,
+            "description": "Colorful shade-loving flowers that bloom continuously all season.",
+            "image": "./images/impatiens-bundle.jpg"
+        },
+        {
+            "id": 39,
+            "name": "Petunia Hanging Basket",
+            "category": "flowering",
+            "currentPrice": 24.99,
+            "originalPrice": 29.99,
+            "discount": 17,
+            "description": "Pre-planted hanging basket overflowing with colorful petunias.",
+            "image": "./images/petunia-hanging-basket.jpg"
+        },
+        {
+            "id": 40,
+            "name": "Pansy Collection",
+            "category": "flowering",
+            "currentPrice": 11.99,
+            "originalPrice": 14.99,
+            "discount": 20,
+            "description": "Cool-weather flowers with happy face patterns. Great for borders.",
+            "image": "./images/pansy-collection.jpg"
+        },
+        {
+            "id": 41,
+            "name": "Calathea Orbita",
+            "category": "special",
+            "currentPrice": 29.99,
+            "originalPrice": 39.99,
+            "discount": 25,
+            "description": "A tropical indoor plant with elegant pink-striped leaves that thrive in humidity.",
+            "image": "./images/calathea-orbita.jpg"
+        },
+        {
+            "id": 42,
+            "name": "Philodendron Gloriousm",
+            "category": "special",
+            "currentPrice": 34.99,
+            "originalPrice": 44.99,
+            "discount": 22,
+            "description": "A rare velvety-leaved plant with bold white veins and lush heart-shaped foliage.",
+            "image": "./images/philodendron-gloriosum.jpg"
+        },
+        {
+            "id": 43,
+            "name": "Anthurium Red",
+            "category": "special",
+            "currentPrice": 39.99,
+            "originalPrice": 49.99,
+            "discount": 20,
+            "description": "A vibrant houseplant with glossy red blooms that add year-round color indoors.",
+            "image": "./images/anthurium-red.jpg"
+        },
+        {
+            "id": 44,
+            "name": "Hellebore Bush",
+            "category": "special",
+            "currentPrice": 27.99,
+            "originalPrice": 34.99,
+            "discount": 20,
+            "description": "A winter-flowering bush with delicate blooms in soft pink, white, and purple shades.",
+            "image": "./images/hellebore-bush.jpg"
+        },
+        {
+            "id": 45,
+            "name": "Air Plant Trio",
+            "category": "special",
+            "currentPrice": 19.99,
+            "originalPrice": 24.99,
+            "discount": 20,
+            "description": "Three unique air plants that need no soil. Perfect for creative displays.",
+            "image": "./images/air-plant-trio.jpg"
+        },
+        {
+            "id": 46,
+            "name": "Marigold Bush",
+            "category": "special",
+            "currentPrice": 24.99,
+            "originalPrice": 31.99,
+            "discount": 22,
+            "description": "A bright, sun-loving plant with cheerful yellow and orange blossoms.",
+            "image": "./images/marigold-bush.jpg"
+        },
+        {
+            "id": 47,
+            "name": "Azalea Bush",
+            "category": "special",
+            "currentPrice": 44.99,
+            "originalPrice": 54.99,
+            "discount": 18,
+            "description": "A flowering shrub known for its vibrant, showy blooms and lush green foliage.",
+            "image": "./images/azalea-bush.jpg"
+        },
+        {
+            "id": 48,
+            "name": "Large Statement Plant",
+            "category": "special",
+            "currentPrice": 79.99,
+            "originalPrice": 99.99,
+            "discount": 20,
+            "description": "Mature floor plant that makes an instant impact in any room.",
+            "image": "./images/large-statement-plant.jpg"
+        },
+        {
+            "id": 49,
+            "name": "Polka Dot Begonia",
+            "category": "accessories",
+            "currentPrice": 34.99,
+            "originalPrice": 42.99,
+            "discount": 19,
+            "description": "A striking indoor plant with silver-spotted leaves and red undersides.",
+            "image": "./images/polka-dot-begonia.jpg"
+        },
+        {
+            "id": 50,
+            "name": "Aglonema Pink",
+            "category": "accessories",
+            "currentPrice": 22.99,
+            "originalPrice": 28.99,
+            "discount": 21,
+            "description": "A colorful foliage plant with pink and green variegated leaves that brighten any room.",
+            "image": "./images/aglonema-pink.jpg"
+        },
+        {
+            "id": 51,
+            "name": "String of Hearts",
+            "category": "indoor",
+            "originalPrice": 49.99,
+            "discount": 15,
+            "currentPrice": 42.49,
+            "description": "A trailing indoor plant with delicate heart-shaped leaves and cascading vines.",
+            "image": "./images/string-of-hearts.jpg"
+        },
+        {
+            "id": 52,
+            "name": "Blue Star Fern",
+            "category": "indoor",
+            "originalPrice": 59.99,
+            "discount": 20,
+            "currentPrice": 47.99,
+            "description": "A unique fern with soft, silvery-blue fronds perfect for low-light spaces.",
+            "image": "./images/blue-star-fern.jpg"
+        },
+        {
+            "id": 53,
+            "name": "Orchid Cymbidium",
+            "category": "special",
+            "originalPrice": 69.99,
+            "discount": 18,
+            "currentPrice": 57.39,
+            "description": "An elegant flowering orchid with long-lasting blooms and vibrant colors.",
+            "image": "./images/orchid-cymbidium.jpg"
+        },
+        {
+            "id": 54,
+            "name": "Basil Herb",
+            "category": "herb",
+            "originalPrice": 34.99,
+            "discount": 10,
+            "currentPrice": 31.49,
+            "description": "A fragrant kitchen herb with lush green leaves, perfect for cooking and decor.",
+            "image": "./images/basil-herb.jpg"
+        }
+    ]
+}
