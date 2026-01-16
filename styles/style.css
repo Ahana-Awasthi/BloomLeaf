@@ -176,16 +176,17 @@ h3 {
 }
 
 .btn-outline {
-    border: 2px solid #82c285;
+    border: 2px solid #5fc264;
     color: #ffffff;
     padding: 6px 15px;
+    background: #20b027;
     border-radius: 5px;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .btn-outline:hover {
-    background: #86b088;
+    background: #0c6611;
     color: #fff;
 }
 

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart - The Green Heaven</title>
+        <link rel="icon" type="image/png" href="images/logo.png" sizes="64x64">
+    <title>Shopping Cart - BloomLeaf Nursery</title>
     <link rel="stylesheet" href="styles/cart.css">
 <link rel="stylesheet" href="styles/style.css">
 
@@ -13,23 +14,25 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="header-container">
-            <a href="index.html" class="logo">The Green <span>Heaven</span></a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="wishlist.html">Wishlist</a></li>
-                </ul>
-            </nav>
-            <div class="nav-icons">
-                <a href="cart.html" class="icon-btn">
-                    <span class="cart-icon">🛒</span>
-                    <span class="badge" id="cart-badge">3</span>
+        <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <h2><img src="images/bloomleaf.png" alt=""> BloomLeaf</h2>
                 </a>
             </div>
+            <ul class="nav-menu">
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+               <li><a href="login.html">Dashboard</a></li>
+
+            </ul>
+            <ul class="nav-icons">
+                <li><a href="wishlist.html" class="nav-icon">❤️</a></li>
+                <li><a href="cart.html" class="nav-icon">🛒</a></li>
+            </ul>
         </div>
+    </nav>
     </header>
 
     <!-- Main Content -->
@@ -41,7 +44,7 @@
             <!-- Item 1 -->
             <div class="cart-item">
                 <div class="item-image">
-                    <img src="https://placeholder-image-service.onrender.com/image/120x120?text=Monstera+Plant&bg=4CAF50&color=white"
+                    <img src="images/monstera-deliciosa.jpg"
                         alt="Monstera Deliciosa plant with large green leaves">
                 </div>
                 <div class="item-details">
@@ -61,7 +64,7 @@
             <!-- Item 2 -->
             <div class="cart-item">
                 <div class="item-image">
-                    <img src="https://placeholder-image-service.onrender.com/image/120x120?text=Snake+Plant&bg=8BC34A&color=white"
+                    <img src="images/snake-plant.jpg"
                         alt="Snake Plant with tall vertical green leaves">
                 </div>
                 <div class="item-details">
@@ -81,11 +84,11 @@
             <!-- Item 3 -->
             <div class="cart-item">
                 <div class="item-image">
-                    <img src="https://placeholder-image-service.onrender.com/image/120x120?text=Orchid+Plant&bg=E91E63&color=white"
-                        alt="Beautiful purple orchid flower in full bloom">
+                    <img src="images/orchid-cymbidium.jpg"
+                        alt="Beautiful purple orchid cymbidium flower in full bloom">
                 </div>
                 <div class="item-details">
-                    <h3>Purple Orchid</h3>
+                    <h3>Orchid Cymbidium</h3>
                     <p>Elegant flowering plant for home decoration</p>
                     <div class="item-price">$29.99</div>
                 </div>
@@ -120,20 +123,13 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-container">
+      <footer class="footer">
+        <div class="footer-content">
             <div class="footer-section">
-             <h3><img src="images/bloomleaf.png" alt=""> BloomLeaf</h3>
-                <p>Bringing nature's beauty to your home</p>
+                <h3><img src="images/bloomleaf.png" alt=""> BloomLeaf</h3>
+                <p>Bringing nature's beauty to your doorstep with premium quality plants and exceptional service.</p>
             </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </div>
+           
             <div class="footer-section">
                 <h4>Contact</h4>
                 <p>Email: info@bloomleaf.com</p>
@@ -141,7 +137,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 BloomLeaf. All rights reserved.</p>
+            <p>&copy; 2024 BloomLeaf Nursery. All rights reserved.</p>
         </div>
     </footer>
 

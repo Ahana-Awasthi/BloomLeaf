@@ -4,244 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo.png" sizes="64x64">
     <title>BloomLeaf Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Base Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background: #f7fdf7;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Container */
-        .dashboard-container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        /* Section Titles */
-        .section-title {
-            font-size: 1.5rem;
-            color: #2f855a;
-            /* BloomLeaf green */
-            margin-bottom: 1rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: #2f855a;
-            margin-top: 5px;
-            border-radius: 2px;
-        }
-
-        /* Profile Section */
-        .profile-section {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: #2f855a;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        .profile-info p {
-            margin-bottom: 0.5rem;
-            color: #555;
-        }
-
-        .edit-btn {
-            margin-top: 0.5rem;
-            background: #2f855a;
-            color: white;
-            border: none;
-            padding: 0.4rem 0.8rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-
-        .edit-btn:hover {
-            background: #276749;
-        }
-
-        /* Orders Section */
-        .orders-section {
-            padding: 1.5rem;
-            background: white;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            font-style: italic;
-            color: #718096;
-        }
-
-        /* Plant Care Tips Section */
-        .tips-section {
-            padding: 1.5rem;
-            background: white;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            display: flex;
-            gap: 1rem;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-        }
-
-        .tip-card {
-            flex: 0 0 200px;
-            background: #e6fffa;
-            border-radius: 10px;
-            padding: 1rem;
-            text-align: center;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .tip-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .tip-card i {
-            font-size: 2rem;
-            color: #38a169;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .tip-card p {
-            font-size: 0.9rem;
-            color: #2d3748;
-        }
-
-        /* Recommended Plants Section */
-        .recommend-section {
-            padding: 1.5rem;
-            background: white;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .plants-list {
-            display: flex;
-            gap: 1rem;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-        }
-
-        .plant-card {
-            flex: 0 0 150px;
-            text-align: center;
-            background: #f0fff4;
-            border-radius: 10px;
-            padding: 1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-
-        .plant-card img {
-            width: 100%;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 0.5rem;
-        }
-
-        .plant-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .plant-card h4 {
-            font-size: 0.95rem;
-            color: #2f855a;
-        }
-
-        /* Logout */
-        .logout-btn {
-            display: block;
-            margin: 2rem auto;
-            background: #e53e3e;
-            color: white;
-            border: none;
-            padding: 0.6rem 1.2rem;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s;
-        }
-
-        .logout-btn:hover {
-            background: #c53030;
-        }
-
-        /* Scrollbar Styling */
-        .tips-section::-webkit-scrollbar,
-        .plants-list::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .tips-section::-webkit-scrollbar-thumb,
-        .plants-list::-webkit-scrollbar-thumb {
-            background: #38a169;
-            border-radius: 3px;
-        }
-
-        .tips-section::-webkit-scrollbar-track,
-        .plants-list::-webkit-scrollbar-track {
-            background: #edfdf5;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .profile-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .tips-section,
-            .plants-list {
-                flex-wrap: nowrap;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles/style.css">
+   <link rel="stylesheet" href="styles/dashboard.css">
 </head>
 
 <body>
+     <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <h2><img src="images/bloomleaf.png" alt=""> BloomLeaf</h2>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Dashboard</a></li>
+
+            </ul>
+            <ul class="nav-icons">
+                <li><a href="wishlist.html" class="nav-icon">❤️</a></li>
+                <li><a href="cart.html" class="nav-icon">🛒</a></li>
+            </ul>
+        </div>
+    </nav>
     <div class="dashboard-container">
 
         <!-- Greeting -->
@@ -282,64 +71,24 @@
 
     </div>
 
-    <script>
-        // Demo user (replace with localStorage logic if needed)
-        const user = {
-            name: "Ahana Awasthi",
-            email: "ahana@example.com",
-            age: 20,
-            gender: "Female"
-        };
-
-        // Load user info
-        document.getElementById('userName').textContent = user.name;
-        document.getElementById('userEmail').textContent = user.email;
-        document.getElementById('userAge').textContent = user.age;
-        document.getElementById('userGender').textContent = user.gender;
-
-        const initials = user.name.split(' ').map(n => n[0]).join('').toUpperCase();
-        document.getElementById('avatar').textContent = initials;
-
-        // Edit profile placeholder
-        function editProfile() {
-            alert('Edit Profile: This will open a form in a real app.');
-        }
-
-        // Logout placeholder
-        function logout() {
-            alert('Logout: Redirect to login page or clear session.');
-        }
-
-        // Plant care tips
-        const tips = [
-            { icon: '💧', text: 'Water succulents once a week.' },
-            { icon: '☀️', text: 'Place plants in indirect sunlight.' },
-            { icon: '🪴', text: 'Use well-draining soil.' },
-            { icon: '🌱', text: 'Fertilize monthly for healthy growth.' },
-            { icon: '🍂', text: 'Remove dead leaves to keep plants fresh.' }
-        ];
-        const tipsSection = document.getElementById('tipsSection');
-        tips.forEach(tip => {
-            const div = document.createElement('div');
-            div.className = 'tip-card';
-            div.innerHTML = `<i>${tip.icon}</i><p>${tip.text}</p>`;
-            tipsSection.appendChild(div);
-        });
-
-        // Recommended plants
-        const recommendedPlants = [
-            { name: 'Snake Plant', img: 'https://via.placeholder.com/150' },
-            { name: 'Aloe Vera', img: 'https://via.placeholder.com/150' },
-            { name: 'Fiddle Leaf Fig', img: 'https://via.placeholder.com/150' }
-        ];
-        const plantsList = document.getElementById('plantsList');
-        recommendedPlants.forEach(plant => {
-            const div = document.createElement('div');
-            div.className = 'plant-card';
-            div.innerHTML = `<img src="${plant.img}" alt="${plant.name}"><h4>${plant.name}</h4>`;
-            plantsList.appendChild(div);
-        });
-    </script>
+    <script src="scripts/dashboard.js"></script>
+     <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><img src="images/bloomleaf.png" alt=""> BloomLeaf</h3>
+                <p>Bringing nature's beauty to your doorstep with premium quality plants and exceptional service.</p>
+            </div>
+           
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: info@bloomleaf.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BloomLeaf Nursery. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
