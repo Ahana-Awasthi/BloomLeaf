@@ -1,6 +1,6 @@
  async function loadProducts() {
       try {
-        const response = await fetch('../data/product.json');
+        const response = await fetch('./data/product.json');
         const data = await response.json();
         const products = data.products;
         const container = document.getElementById('product-list');
