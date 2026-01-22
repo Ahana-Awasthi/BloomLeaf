@@ -43,9 +43,9 @@
 
         // Recommended plants
         const recommendedPlants = [
-            { name: 'Snake Plant', img: './images/snake-plant.jpg' },
-            { name: 'Aloe Vera', img: './images/aloe-vera-plant.jpg' },
-            { name: 'Fiddle Leaf Fig', img: './images/fiddle-leaf-fig.jpg' }
+            { name: 'Snake Plant', img: 'images/snake-plant.jpg' },
+            { name: 'Aloe Vera', img: 'images/aloe-vera-plant.jpg' },
+            { name: 'Fiddle Leaf Fig', img: 'images/fiddle-leaf-fig.jpg' }
         ];
         const plantsList = document.getElementById('plantsList');
         recommendedPlants.forEach(plant => {
