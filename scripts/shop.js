@@ -9,6 +9,7 @@
         products.forEach(product => {
           const card = document.createElement('div');
           card.classList.add('product-card');
+          card.style.cursor = 'pointer';
 
           card.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
@@ -18,9 +19,17 @@
               <span class="price">$${product.currentPrice.toFixed(2)}</span>
               <span class="old-price">$${product.originalPrice.toFixed(2)}</span>
             </p>
-            <button class="btn" onclick="addToCart(${product.id})">Add to Cart</button>
-            <button class="btn" onclick="addToWishlist(${product.id})">Wishlist</button>
+            <div class="button-group">
+              <button class="btn" onclick="event.stopPropagation(); addToCart(${product.id})">Add to Cart</button>
+              <button class="btn" onclick="event.stopPropagation(); addToWishlist(${product.id})">Wishlist</button>
+            </div>
           `;
+          
+          // Make the entire card clickable to go to product details
+          card.onclick = function() {
+            window.location.href = `product-details.html?id=${product.id}`;
+          };
+          
           container.appendChild(card);
         });
       } catch (error) {
